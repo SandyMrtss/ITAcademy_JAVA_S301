@@ -7,7 +7,6 @@ import java.util.*;
 public class Undo {
     private static Undo instance;
     public List<String> commands;
-       private static final String currDir = System.getProperty("user.dir");
     private Undo(){
         this.commands = new ArrayList<>();
     }
