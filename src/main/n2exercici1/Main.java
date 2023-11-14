@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void showOptionsMain(){
-        System.out.println("What do you want to do?:\n" +
+        System.out.println("What do you want to do?\n" +
                 "1.- Add new contact\n" +
                 "2.- Show contacts\n" +
                 "0.- Exit");
     }
     public static void showOptionsAdd(){
-        System.out.println("What kind of contact is it?:\n" +
+        System.out.println("What kind of contact is it?\n" +
                 "1.- National\n" +
                 "2.- International\n" +
                 "0.- Exit");
@@ -20,11 +20,13 @@ public class Main {
     }
     public static void askNumberFloorDoor(){
         System.out.println("Please introduce number, floor and/or door");
-    }public static void askCity(){
+    }
+    public static void askCity(){
         System.out.println("Please introduce city");
     }public static void askProvince(){
         System.out.println("Please introduce province/state/region");
-    }public static void askZipCode(){
+    }
+    public static void askZipCode(){
         System.out.println("Please introduce ZipCode");
     }
     public static void main(String[] args) {
@@ -34,16 +36,19 @@ public class Main {
         while (!isExit){
             showOptionsMain();
             int option = in.nextInt();
+            in.nextLine();
             switch (option){
                 case 1:
-                    System.out.println("What's the contact's name?");
                     Contact contact;
+                    System.out.println("What's the contact's name?");
                     String name = in.nextLine().trim();
                     showOptionsAdd();
                     int type = in.nextInt();
+                    in.nextLine();
                     if(type == 1){
                         System.out.println("Please introduce phone number without prefix and without whitespaces");
                         int number = in.nextInt();
+                        in.nextLine();
                         NationalPhone phone = new NationalPhone(number);
                         System.out.println("Please introduce address information:");
                         askStreet();
@@ -52,6 +57,7 @@ public class Main {
                         String numberFloorDoor = in.nextLine().trim();
                         askZipCode();
                         int zipcode = in.nextInt();
+                        in.nextLine();
                         askCity();
                         String city = in.nextLine().trim();
                         askProvince();
@@ -64,6 +70,7 @@ public class Main {
                         String country = in.nextLine().trim();
                         System.out.println("Please introduce phone number without prefix and without whitespaces");
                         int number = in.nextInt();
+                        in.nextLine();
                         InternationalPhone phone = new InternationalPhone(country, number);
                         System.out.println("Please introduce address information:");
                         askStreet();
@@ -80,6 +87,14 @@ public class Main {
                         contact = new Contact(name, phone, address);
                     }
                     myDirectory.addContact(contact);
+                    break;
+                case 2:
+                    myDirectory.showDirectory();
+                    break;
+
+                default:
+                    option = 0;
+                    System.out.println("Goodbye");
             }
         }
 

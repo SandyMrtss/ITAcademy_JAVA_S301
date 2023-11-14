@@ -10,7 +10,6 @@ public class InternationalPhone implements Phone{
     private static final String currDir = System.getProperty("user.dir");
     private static final File countryPrefixes = new File(currDir + "/src/main/n2exercici1/CountryPrefixes.csv");
     static {
-        System.out.println("Creating country-prefix key");
         countryPrefixesKey = new HashMap<>();
         try {
             Scanner myReader = new Scanner(countryPrefixes);

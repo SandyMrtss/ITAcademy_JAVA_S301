@@ -11,7 +11,7 @@ public class NationalAddress implements Address{
 
     @Override
     public String toString() {
-        return String.format("Street: %s %s %05d, %s, %s, %s", street, numberFloorDoor, zipcode, city, province, country);
+        return String.format("Address: %s %s %05d, %s, %s, %s", street, numberFloorDoor, zipcode, city, province, country);
     }
 
     public NationalAddress(String street, String numberFloorDoor, int zipcode, String city, String province) {

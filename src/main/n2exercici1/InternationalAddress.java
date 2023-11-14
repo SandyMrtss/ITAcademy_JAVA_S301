@@ -10,7 +10,7 @@ public class InternationalAddress implements Address{
 
     @Override
     public String toString() {
-        return String.format("Street: %s %s %s, %s, %s, %s", street, numberFloorDoor, zipcode, city, province, country);
+        return String.format("Address: %s %s %s, %s, %s, %s", street, numberFloorDoor, zipcode, city, province, country);
     }
 
     public InternationalAddress(String street, String numberFloorDoor, String zipcode, String city, String province, String country) {
