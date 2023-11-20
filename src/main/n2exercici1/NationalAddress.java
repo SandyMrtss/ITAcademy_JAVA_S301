@@ -10,7 +10,7 @@ public class NationalAddress implements Address{
     private static final String country = "Spain";
 
     @Override
-    public String toString() {
+    public String showAddress() {
         return String.format("Address: %s %s %05d, %s, %s, %s", street, numberFloorDoor, zipcode, city, province, country);
     }
 
@@ -20,5 +20,14 @@ public class NationalAddress implements Address{
         this.zipcode = zipcode;
         this.city = city;
         this.province = province;
+    }
+    @Override
+    public String toString() {
+        return "Address{" + street +
+                ", " + numberFloorDoor +
+                ", " + zipcode +
+                ", " + city +
+                ", " + province +
+                ", " + country + '}';
     }
 }

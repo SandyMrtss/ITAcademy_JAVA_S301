@@ -4,7 +4,7 @@ public class NationalPhone implements Phone{
     private String phoneNumber;
 
     @Override
-    public String toString(){
+    public String showPhone(){
         return "Phone number: " + this.phoneNumber;
     }
 
@@ -13,6 +13,8 @@ public class NationalPhone implements Phone{
         this.phoneNumber = "+34" + String.valueOf(phoneNumber);
     }
 
-
-
+    @Override
+    public String toString() {
+        return "PhoneNumber{" + phoneNumber + '}';
+    }
 }

@@ -31,7 +31,11 @@ public class InternationalPhone implements Phone{
     }
 
     @Override
-    public String toString(){
+    public String showPhone(){
         return "Phone number: " + this.phoneNumber;
+    }
+    @Override
+    public String toString() {
+        return "PhoneNumber{" + phoneNumber + '}';
     }
 }

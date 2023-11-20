@@ -9,7 +9,7 @@ public class InternationalAddress implements Address{
     private String country;
 
     @Override
-    public String toString() {
+    public String showAddress() {
         return String.format("Address: %s %s %s, %s, %s, %s", street, numberFloorDoor, zipcode, city, province, country);
     }
 
@@ -20,5 +20,15 @@ public class InternationalAddress implements Address{
         this.city = city;
         this.province = province;
         this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" + street +
+                ", " + numberFloorDoor +
+                ", " + zipcode +
+                ", " + city +
+                ", " + province +
+                ", " + country + '}';
     }
 }

@@ -10,13 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\src\main\n2exercici1\Prov_ncies_d_Espanya.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
