@@ -2,8 +2,11 @@ package n3exercici1;
 
 public class Start implements Command{
     private Vehicle vehicle;
+    public Start(Vehicle vehicle){
+        this.vehicle = vehicle;
+    }
 
     public void execute(){
-        System.out.println("The vehicle is starting");
+        vehicle.start();
     }
 }
