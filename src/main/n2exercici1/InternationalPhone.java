@@ -16,7 +16,7 @@ public class InternationalPhone implements Phone{
             myReader.nextLine();
             while (myReader.hasNextLine()){
                 String[] values = myReader.nextLine().split(",");
-                countryPrefixesKey.put(values[0], values[1]);
+                countryPrefixesKey.put(values[0].toUpperCase(), values[1]);
             }
         } catch (FileNotFoundException ex) {
             System.out.println("Error when trying to read CountryPrefixes.csv");
@@ -25,7 +25,10 @@ public class InternationalPhone implements Phone{
 
     }
 
-    public InternationalPhone(String country, int number) {
+    public InternationalPhone(String country, int number) throws NoSuchFieldException{
+        if(!countryPrefixesKey.containsKey(country)){
+            throw new NoSuchFieldException("Country not found");
+        }
         String prefix = countryPrefixesKey.get(country);
         this.phoneNumber = prefix.concat(String.valueOf(number)).replace(" ", "");
     }

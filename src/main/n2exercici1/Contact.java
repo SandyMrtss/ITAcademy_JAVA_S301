@@ -13,6 +13,6 @@ public class Contact {
 
     @Override
     public String toString() {
-        return name +"\n" + phoneNumber.toString() + address.toString();
+        return name +"\n" + "\t" + phoneNumber.toString() + "\n\t" + address.toString();
     }
 }
